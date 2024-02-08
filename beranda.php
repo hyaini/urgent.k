@@ -471,7 +471,7 @@ if(isset ($_SESSION['username'])){
 <!--Footer-part-->
 
 <div class="row-fluid">
-  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by henscorp</a> </div>
+  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by nr.aini</a> </div>
 </div>
 
 <!--end-Footer-part-->

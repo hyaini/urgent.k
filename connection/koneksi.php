@@ -3,7 +3,7 @@
 	$user = "root";
 	$pass = "";
 	
-	$db = "dbkopiku";
+	$db = "db_restoran";
 	$conn = mysqli_connect($host,$user,$pass,$db);
 	mysqli_select_db ($conn, $db);
 	

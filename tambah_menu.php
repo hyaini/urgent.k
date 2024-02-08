@@ -141,8 +141,7 @@ if(isset ($_SESSION['username'])){
                 <?php 
                   if(isset($_SESSION['edit_menu'])){
                 ?>
-                  <input name="" type="text" value="<?php echo $nama_masakan; ?>" class="span11" placeholder="Nama Masakan" disabled=""/>
-                  <input name="nama_masakan" type="hidden" value="<?php echo $nama_masakan; ?>" class="span11" placeholder="Nama Masakan"/>
+                 <input name="nama_masakan" type="text" value="<?php echo $nama_masakan; ?>" class="span11" placeholder="Nama Menu"/>
                 <?php
                   } else {
                 ?>

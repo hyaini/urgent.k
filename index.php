@@ -33,7 +33,7 @@
 </head>
 <body>
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('template/masuk/images/img-01.jpg');">
+		<div class="container-login100" style="background-image: url('template/masuk/images/bg.jpg');">
 			<div class="wrap-login100 p-t-120 p-b-30">
 				<form action="" method="post" class="login100-form validate-form">
 					<?php 
@@ -51,11 +51,11 @@
 						}
 					?>
 					<div class="login100-form-avatar">
-						<img src="template/masuk/images/avatar-01.jpg" alt="AVATAR">
+						<img src="template/masuk/images/LOGO.jpeg" alt="AVATAR">
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						RESTORAN V-1
+						Aegyo Chow	
 					</span>
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
