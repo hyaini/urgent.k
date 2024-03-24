@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Agu 2019 pada 03.11
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Generation Time: Mar 24, 2024 at 04:10 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,22 +18,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_restoran`
+-- Database: `resto`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_level`
+-- Table structure for table `tb_level`
 --
 
 CREATE TABLE `tb_level` (
   `id_level` int(11) NOT NULL,
   `nama_level` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_level`
+-- Dumping data for table `tb_level`
 --
 
 INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
@@ -42,12 +41,12 @@ INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
 (2, 'Waiter'),
 (3, 'Kasir'),
 (4, 'Owner'),
-(5, 'Pelanggan');
+(5, 'Pelanggan\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_masakan`
+-- Table structure for table `tb_masakan`
 --
 
 CREATE TABLE `tb_masakan` (
@@ -57,22 +56,26 @@ CREATE TABLE `tb_masakan` (
   `stok` int(11) NOT NULL,
   `status_masakan` varchar(150) NOT NULL,
   `gambar_masakan` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_masakan`
+-- Dumping data for table `tb_masakan`
 --
 
 INSERT INTO `tb_masakan` (`id_masakan`, `nama_masakan`, `harga`, `stok`, `status_masakan`, `gambar_masakan`) VALUES
-(8, 'Sate Ayam', '11000', 15, 'tersedia', 'Sate Ayam.jpeg'),
-(14, 'Sayur Asem', '7500', 78, 'tersedia', 'Sayur Asem.jpeg'),
-(18, 'Ayam Geprek', '11000', 7, 'tersedia', 'Ayam Geprek.jpeg'),
-(19, 'Nasi Pecel', '7000', 23, 'tersedia', 'Nasi Pecel.jpg');
+(23, 'Cromboloni Cokelat', '35000', 9, 'tersedia', 'Cromboloni Cokelat.png'),
+(24, 'Chocolate Cheese', '37000', 13, 'tersedia', 'Chocolate Cheese.png'),
+(25, 'Strawberry Toast', '27000', 10, 'tersedia', 'Strawberry Toast.png'),
+(26, 'Cromboloni Almond', '35000', 7, 'tersedia', 'Cromboloni Almond.png'),
+(27, 'Caramel Latte', '37000', 12, 'tersedia', 'Caramel Latte.png'),
+(28, 'Ice Mocca Latte', '35000', 11, 'tersedia', 'Ice Mocca.png'),
+(29, 'Nuttela Cafe Latte', '35000', 13, 'tersedia', 'Nuttela Cafe Latte.png'),
+(30, 'Waffles Creams', '28000', 22, 'tersedia', 'Waffles Creams.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_order`
+-- Table structure for table `tb_order`
 --
 
 CREATE TABLE `tb_order` (
@@ -85,25 +88,19 @@ CREATE TABLE `tb_order` (
   `uang_bayar` varchar(150) DEFAULT NULL,
   `uang_kembali` varchar(150) DEFAULT NULL,
   `status_order` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_order`
+-- Dumping data for table `tb_order`
 --
 
 INSERT INTO `tb_order` (`id_order`, `id_admin`, `id_pengunjung`, `waktu_pesan`, `no_meja`, `total_harga`, `uang_bayar`, `uang_kembali`, `status_order`) VALUES
-(14, 1, 9, '2019-08-03 12:43:52', 1, '48000', '50000', '2000', 'sudah bayar'),
-(15, 1, 1, '2019-08-04 16:25:45', 1, '44000', '50000', '6000', 'sudah bayar'),
-(16, 1, 1, '2019-08-04 16:35:24', 8, '105500', '150000', '44500', 'sudah bayar'),
-(18, 1, 7, '2019-08-04 16:37:58', 8, '87000', '100000', '13000', 'sudah bayar'),
-(19, 1, 1, '2019-08-04 17:17:09', 1, '22000', '50000', '28000', 'sudah bayar'),
-(20, 1, 6, '2019-08-04 18:04:22', 8, '29500', '50000', '20500', 'sudah bayar'),
-(21, 0, 10, '2019-08-07 08:54:23', 1, '22000', '', '', 'belum bayar');
+(27, 1, 15, '2024-03-23 10:32:28', 20, '107000', '150000', '43000', 'sudah bayar');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pesan`
+-- Table structure for table `tb_pesan`
 --
 
 CREATE TABLE `tb_pesan` (
@@ -113,33 +110,26 @@ CREATE TABLE `tb_pesan` (
   `id_masakan` int(11) NOT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `status_pesan` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_pesan`
+-- Dumping data for table `tb_pesan`
 --
 
 INSERT INTO `tb_pesan` (`id_pesan`, `id_user`, `id_order`, `id_masakan`, `jumlah`, `status_pesan`) VALUES
-(33, 9, 14, 14, 2, 'sudah'),
-(34, 9, 14, 8, 3, 'sudah'),
-(35, 1, 15, 19, 2, 'sudah'),
-(36, 1, 15, 14, 4, 'sudah'),
-(37, 1, 16, 19, 3, 'sudah'),
-(38, 1, 16, 14, 1, 'sudah'),
-(39, 1, 16, 8, 7, 'sudah'),
-(43, 7, 18, 19, 4, 'sudah'),
-(44, 7, 18, 14, 2, 'sudah'),
-(45, 7, 18, 8, 4, 'sudah'),
-(46, 1, 19, 19, 1, 'sudah'),
-(47, 1, 19, 14, 2, 'sudah'),
-(48, 6, 20, 8, 2, 'sudah'),
-(49, 6, 20, 14, 1, 'sudah'),
-(50, 10, 21, 18, 2, '');
+(51, 1, 0, 19, 0, 'sudah'),
+(52, 1, 0, 18, 0, 'sudah'),
+(61, 1, 0, 30, 0, 'sudah'),
+(62, 1, 0, 26, 0, 'sudah'),
+(63, 1, 0, 28, 0, 'sudah'),
+(64, 15, 27, 23, 1, 'sudah'),
+(65, 15, 27, 28, 1, 'sudah'),
+(66, 15, 27, 24, 1, 'sudah');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_stok`
+-- Table structure for table `tb_stok`
 --
 
 CREATE TABLE `tb_stok` (
@@ -147,10 +137,10 @@ CREATE TABLE `tb_stok` (
   `id_pesan` int(11) NOT NULL,
   `jumlah_terjual` int(11) DEFAULT NULL,
   `status_cetak` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_stok`
+-- Dumping data for table `tb_stok`
 --
 
 INSERT INTO `tb_stok` (`id_stok`, `id_pesan`, `jumlah_terjual`, `status_cetak`) VALUES
@@ -158,12 +148,28 @@ INSERT INTO `tb_stok` (`id_stok`, `id_pesan`, `jumlah_terjual`, `status_cetak`) 
 (2, 47, 2, 'belum cetak'),
 (3, 48, 2, 'belum cetak'),
 (4, 49, 1, 'belum cetak'),
-(5, 50, 2, 'belum cetak');
+(5, 50, 2, 'belum cetak'),
+(6, 51, 0, 'belum cetak'),
+(7, 52, 0, 'belum cetak'),
+(8, 53, 0, 'belum cetak'),
+(9, 54, 0, 'belum cetak'),
+(10, 55, 0, 'belum cetak'),
+(11, 56, 2, 'belum cetak'),
+(12, 57, 1, 'belum cetak'),
+(13, 58, 6, 'belum cetak'),
+(14, 59, 1, 'belum cetak'),
+(15, 60, 1, 'belum cetak'),
+(16, 61, 0, 'belum cetak'),
+(17, 62, 0, 'belum cetak'),
+(18, 63, 0, 'belum cetak'),
+(19, 64, 1, 'belum cetak'),
+(20, 65, 1, 'belum cetak'),
+(21, 66, 1, 'belum cetak');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -173,40 +179,39 @@ CREATE TABLE `tb_user` (
   `nama_user` varchar(150) NOT NULL,
   `id_level` int(11) NOT NULL,
   `status` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`, `status`) VALUES
-(1, 'hendrik24', '123', 'Hendrik Setiawan', 1, 'aktif'),
-(6, 'hendro', '123', 'Hendro', 2, 'aktif'),
-(7, 'fitri', '123', 'Fitri', 3, 'aktif'),
-(8, 'slamet', '123', 'Slamet', 4, 'aktif'),
-(9, 'sugiastutik', '123', 'Sugiastutik', 4, 'aktif'),
-(10, 'topik', '123', 'Moh Taofik RR', 5, 'aktif'),
-(11, 'selpi', '123', 'Selviana Ariani', 5, 'aktif'),
-(12, 'kesi', '123', 'Sukesi', 5, 'aktif');
+(7, 'rara', '123', 'rara', 3, 'aktif'),
+(8, 'aini', '123', 'aini', 4, 'aktif'),
+(15, 'jojo', '123', 'jojo', 5, 'aktif'),
+(18, 'sasa', '123', 'sasa', 2, 'aktif'),
+(19, 'sisi', '123', 'sisi', 2, 'nonaktif'),
+(20, 'sandrina12', '123', 'sandrina', 5, 'aktif'),
+(21, 'lilah', '123', 'lilah', 1, 'aktif');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_level`
+-- Indexes for table `tb_level`
 --
 ALTER TABLE `tb_level`
   ADD PRIMARY KEY (`id_level`);
 
 --
--- Indeks untuk tabel `tb_masakan`
+-- Indexes for table `tb_masakan`
 --
 ALTER TABLE `tb_masakan`
   ADD PRIMARY KEY (`id_masakan`);
 
 --
--- Indeks untuk tabel `tb_order`
+-- Indexes for table `tb_order`
 --
 ALTER TABLE `tb_order`
   ADD PRIMARY KEY (`id_order`),
@@ -214,19 +219,19 @@ ALTER TABLE `tb_order`
   ADD KEY `id_pengunjung` (`id_pengunjung`);
 
 --
--- Indeks untuk tabel `tb_pesan`
+-- Indexes for table `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
   ADD PRIMARY KEY (`id_pesan`);
 
 --
--- Indeks untuk tabel `tb_stok`
+-- Indexes for table `tb_stok`
 --
 ALTER TABLE `tb_stok`
   ADD PRIMARY KEY (`id_stok`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`),
@@ -234,51 +239,51 @@ ALTER TABLE `tb_user`
   ADD KEY `id_level` (`id_level`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_level`
+-- AUTO_INCREMENT for table `tb_level`
 --
 ALTER TABLE `tb_level`
   MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_masakan`
+-- AUTO_INCREMENT for table `tb_masakan`
 --
 ALTER TABLE `tb_masakan`
-  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_order`
+-- AUTO_INCREMENT for table `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pesan`
+-- AUTO_INCREMENT for table `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_stok`
+-- AUTO_INCREMENT for table `tb_stok`
 --
 ALTER TABLE `tb_stok`
-  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user`
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tb_user`
+-- Constraints for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD CONSTRAINT `tb_user_ibfk_1` FOREIGN KEY (`id_level`) REFERENCES `tb_level` (`id_level`);

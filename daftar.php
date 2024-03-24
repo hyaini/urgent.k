@@ -92,7 +92,7 @@
               <label class="control-label">Level Pengguna</label>
               <div class="controls">
                 <select class="span11" name="id_level">
-                  <!--<option value="1">Administrator</option>-->
+                  <option value="1">Administrator</option>
                   <option value="2">Waiter</option>
                   <option value="3">Kasir</option>
                   <option value="4">Owner</option>
@@ -130,7 +130,7 @@
 </div>
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by henscorp</a> </div>
+  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by aini</a> </div>
 </div>
 <!--end-Footer-part--> 
 <script src="template/dashboard/js/jquery.min.js"></script> 

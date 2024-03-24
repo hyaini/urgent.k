@@ -70,7 +70,7 @@ if(isset ($_SESSION['username'])){
 
 
 <!--top-Header-menu-->
-<div id="user-nav" class="navbar navbar-inverse">
+<div id="user-nav" class="r navbar-inverse">
   <ul class="nav">
     <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome <?php echo $r['nama_user'];?></span><b class="caret"></b></a>
       <ul class="dropdown-menu">
@@ -349,6 +349,70 @@ if(isset ($_SESSION['username'])){
                 </div>
               </div>
 
+              
+<!--DATA ADMINISTRATOR-->
+<div class="widget-box">
+  <?php
+    $query_data_administrator = "SELECT * FROM tb_user WHERE id_level = 1";
+    $sql_data_administrator = mysqli_query($conn, $query_data_administrator);
+    $no_administrator = 1;
+  ?>
+
+  <div class="widget-title">
+    <span class="icon">
+      <i class="icon-th"></i>
+    </span>
+    <h5>Data Administrator</h5>
+  </div>
+  <div class="widget-content nopadding">
+    <table class="table table-bordered table-striped" style="width: 100%">
+      <thead>
+        <tr>
+          <th style="width:5%">No.</th>
+          <th style="width:25%">Nama</th>
+          <th style="width:30%">Username</th>
+          <th style="width:20%">Status</th>
+          <th style="width:20%">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          while ($r_dt_administrator = mysqli_fetch_array($sql_data_administrator)) {
+            ?>
+            <tr class="odd gradeX">
+              <td>
+                <center><?php echo $no_administrator++; ?>.</center>
+              </td>
+              <td><?php echo $r_dt_administrator['nama_user']; ?></td>
+              <td><?php echo $r_dt_administrator['username']; ?></td>
+              <td><?php echo $r_dt_administrator['status']; ?></td>
+              <td>
+                <form action="" method="post">
+                  <?php
+                    if ($r_dt_administrator['status'] == 'aktif') {
+                      ?>
+                    <button name="unvalidasi" value="<?php echo $r_dt_administrator['id_user']; ?>" class="btn btn-warning btn-mini">
+                      <i class='icon icon-remove'></i>
+                    </button>
+                  <?php
+                    } else if ($r_dt_administrator['status'] == 'nonaktif') {
+                      ?>
+                    <button name="validasi" value="<?php echo $r_dt_administrator['id_user']; ?>" class="btn btn-info btn-mini"><i class='icon icon-ok'></i></button>
+                    <button name="hapus_user" value="<?php echo $r_dt_administrator['id_user']; ?>" class="btn btn-danger btn-mini"><i class='icon icon-trash'></i></button>
+                  <?php
+                    }
+                  ?>
+                </form>
+              </td>
+            </tr>
+        <?php
+          }
+        ?>
+      </tbody>
+    </table>
+  </div>
+</div>
+
               <!--DATA PELANGGAN-->
               <div class="widget-box">
                 <?php
@@ -471,7 +535,7 @@ if(isset ($_SESSION['username'])){
 <!--Footer-part-->
 
 <div class="row-fluid">
-  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by nr.aini</a> </div>
+  <div id="footer" class="span12"> <?php echo date('Y'); ?> &copy; Restaurant <a href="#">by aini</a> </div>
 </div>
 
 <!--end-Footer-part-->

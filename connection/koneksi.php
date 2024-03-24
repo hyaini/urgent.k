@@ -3,7 +3,7 @@
 	$user = "root";
 	$pass = "";
 	
-	$db = "db_restoran";
+	$db = "resto";
 	$conn = mysqli_connect($host,$user,$pass,$db);
 	mysqli_select_db ($conn, $db);
 	

@@ -117,11 +117,11 @@ page[size="dipakai"][layout="landscape"] {
     ?>
       <center>
         <h4>
-          KOPIKU
+          Quality Coffe
         </h4>
         <span>
-          Jl. Imam Bonjol No. 103 Ds. Tembarak, Kec. Kertosono, Kab. Nganjuk, Jatim<br>
-          Telp. +6289 xxx xxx xxx || E-mail exsample@gmail.com
+          Jl. Perkasa No. 103 Ds. Cilincing, Kec. Pasar Rebo, Kab. jakarta, Dki Jakarta<br>
+          Telp. +6289 883 245 731 || E-mail bestcaffe@gmail.com
         </span>
       </center>
             <hr>
